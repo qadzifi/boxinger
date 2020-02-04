@@ -1,3 +1,8 @@
 env/
 __pycache__/
 db.sqlite3
+*.swp
+**/*.swp
+node_modules/
+package.json
+.eslintrc.json

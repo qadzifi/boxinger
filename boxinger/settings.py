@@ -54,7 +54,8 @@ ROOT_URLCONF = 'boxinger.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
+#		printf "%s%s\n" "$year_num" "$current_term"
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATUCFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+

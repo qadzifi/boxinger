@@ -1,0 +1,43 @@
+{% load staic %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		{# Bootstrap setup #}
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+		{# JQuery setup #}
+		<script src="https://code.jquery.com/jquery-3.4.1.js" charset="utf-8"></script>t
+
+		{% block includedcss %}
+			
+		{% endblock includedcss %}
+
+		{% block includedjs %}
+			
+		{% endblock includedjs %}
+
+		<title>
+			{% block title %}
+			Base		
+			{% endblock title %}
+		</title>
+	</head>
+	<body>
+		{% block bodystart %}
+			
+		{% endblock bodystart %}
+
+		{% block navbar %}
+			
+		{% endblock navbar %}
+
+		body
+		{% block bodyend %}
+			
+		{% endblock bodyend %}
+	</body>
+</html>

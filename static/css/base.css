@@ -1,0 +1,22 @@
+.centerized-div {
+    display: flex;
+    justify-content: center;
+}
+
+.centerized-div-v {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.header {
+    background-color: #76B39D;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.header h1 {
+    font-weight: bold;
+    font-size: 72px;
+    color: white;
+}

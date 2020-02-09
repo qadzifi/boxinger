@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+	    <a class="nav-link centerized-div-v {{ at_home }}" href="{% url 'home' %}">
+		    <div>
+		    	Home
+		    </div>
+	    </a>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+	    <a class="nav-link centerized-div-v dropdown-toggle {{ at_game }}" href="#" id="navbardrop" data-toggle="dropdown">
+	<div>Games</div>
+      </a>
+      <div class="dropdown-menu">
+	      <a class="dropdown-item {{ tetris }}" href="{% url 'tetris:game' %}">Tetris</a>
+      </div>
+    </li>
+  </ul>
+
+</nav>

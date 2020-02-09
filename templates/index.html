@@ -1,12 +1,15 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Index</title>
-	</head>
-	<body>
-		body
-	</body>
-</html>
+
+{% block title %}
+	Homepage
+{% endblock title %}
+
+{% block navbar %}
+	{% include 'navbar.html' with at_home='active' %}	
+{% endblock navbar %}
+
+{% block content %}
+	Welcome to Boxinger
+{% endblock content %}
+

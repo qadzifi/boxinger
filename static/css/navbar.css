@@ -1,0 +1,35 @@
+.navbar {
+	padding: 0 0;
+	height: 50px;
+}
+
+.navbar-nav, .nav-item, .nav-link {
+	height: 100%;
+}
+
+.nav-link {
+	color: #000000;
+	padding: 0;
+	margin: auto;
+}
+
+.nav-link div {
+	text-align: center;
+}
+
+.nav-item {
+	width: 5rem;
+}
+
+.active {
+	background-color: #d9d9d9;
+}
+
+.dropdown-toggle::after {
+	display: none;
+}
+
+.dropdown-item:hover {
+	background-color: lightgray;
+}
+

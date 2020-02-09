@@ -1,3 +1,12 @@
-{% extend 'base.hmtl' %}
+{% extends 'base.html' %}
 {% load static %}
+
+{% block includedjs %}
+	<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+	<script src="{% static 'js/p5js/p5.sound.js' %}" charset="utf-8"></script>
+
+	{% block p5_additionaljs %}
+		
+	{% endblock p5_additionaljs %}
+{% endblock includedjs %}
 

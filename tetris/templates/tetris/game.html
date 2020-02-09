@@ -1,0 +1,36 @@
+{% extends 'p5.html' %}
+{% load static %}
+
+{% block includedcss %}
+<link rel="stylesheet" href="{% static 'tetris/css/layout.css' %}" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock includedcss %}
+
+{% block navbar %}
+	{% include 'navbar.html' with at_game='active' %}
+{% endblock navbar %}
+
+{% block title %}
+	Game | Tetris
+{% endblock title %}
+
+{% block bodystart %}
+<input type="hidden" value="{{ room_id|escapejs }}" name="roomID" id="roomID"/>
+<script src="{% static 'tetris/js/game.js' %}" charset="utf-8"></script>
+{% endblock bodystart %}
+
+{% block content %}
+	Tetris game page
+	<div id="screen" class="name">
+	</div>
+
+	<div id="debug-msg" class="name">
+		
+	</div>
+	<div id="invite-link" class="name">
+	test text	
+	</div>
+{% endblock content %}
+
+{% block bodyend %}
+{% endblock bodyend %}
+

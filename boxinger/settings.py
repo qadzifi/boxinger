@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,18 +26,20 @@ SECRET_KEY = '#c$e1mk(6ujnv8xa3n)dbz&_%azyl6-_dfd=4ojy6)41tp^vx1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tetris',
 ]
 
 MIDDLEWARE = [
@@ -50,12 +53,21 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'boxinger.urls'
+ASGI_APPLICATION = "boxinger.routing.application"
+
+CHANNEL_LAYERS = {
+    'default' : {
+        'BACKEND' : 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    }
+}
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['templates'],
-#		printf "%s%s\n" "$year_num" "$current_term"
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'boxinger.wsgi.application'
+# WSGI_APPLICATION = 'boxinger.wsgi.application'
 
 
 # Database
@@ -81,6 +93,11 @@ DATABASES = {
     }
 }
 
+PRODUCTION = os.environ.get('DATABASE_URL') != None
+if PRODUCTION:
+    Debug = False
+    SECURE_SSL_REDIRECT = True
+    DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -120,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATUCFILES_DIRS = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
